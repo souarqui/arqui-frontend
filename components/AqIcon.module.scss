@@ -1,0 +1,184 @@
+/* AqIcon.module.scss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.aq-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Sizes */
+.aq-icon--size-gigant {
+  @apply w-gigant h-gigant;
+}
+
+.aq-icon--size-huger {
+  @apply w-huger h-huger;
+}
+
+.aq-icon--size-xhuger {
+  @apply w-xhuger h-xhuger;
+}
+
+.aq-icon--size-huge {
+  @apply w-huge h-huge;
+}
+
+.aq-icon--size-larger {
+  @apply w-larger h-larger;
+}
+
+.aq-icon--size-xlarge {
+  @apply w-xlarge h-xlarge;
+}
+
+.aq-icon--size-large {
+  @apply w-large h-large;
+}
+
+.aq-icon--size-medium {
+  @apply w-medium h-medium;
+}
+
+.aq-icon--size-small {
+  @apply w-small h-small;
+}
+
+.aq-icon--size-xsmall {
+  @apply w-xsmall h-xsmall;
+}
+
+.aq-icon--size-smaller {
+  @apply w-smaller h-smaller;
+}
+
+/* Colors */
+.aq-icon--color-default {
+  @apply text-icon-main-default;
+}
+
+.aq-icon--color-light {
+  @apply text-icon-main-light;
+}
+
+.aq-icon--color-lighter {
+  @apply text-icon-main-lighter;
+}
+
+.aq-icon--color-inverse-default {
+  @apply text-icon-inverse-default;
+}
+
+.aq-icon--color-brand-lightest {
+  @apply text-icon-brand-lightest;
+}
+
+.aq-icon--color-brand-default {
+  @apply text-icon-brand-default;
+}
+
+.aq-icon--color-brand-darkest {
+  @apply text-icon-brand-darkest;
+}
+
+.aq-icon--color-critical-lightest {
+  @apply text-icon-critical-lightest;
+}
+
+.aq-icon--color-critical-default {
+  @apply text-icon-critical-default;
+}
+
+.aq-icon--color-critical-darkest {
+  @apply text-icon-critical-darkest;
+}
+
+.aq-icon--color-warning-lightest {
+  @apply text-icon-warning-lightest;
+}
+
+.aq-icon--color-warning-default {
+  @apply text-icon-warning-default;
+}
+
+.aq-icon--color-warning-darkest {
+  @apply text-icon-warning-darkest;
+}
+
+.aq-icon--color-positive-lightest {
+  @apply text-icon-positive-lightest;
+}
+
+.aq-icon--color-positive-default {
+  @apply text-icon-positive-default;
+}
+
+.aq-icon--color-positive-darkest {
+  @apply text-icon-positive-darkest;
+}
+
+/* Fills */
+.aq-icon--fill-default {
+  @apply fill-icon-main-default;
+}
+
+.aq-icon--fill-light {
+  @apply fill-icon-main-light;
+}
+
+.aq-icon--fill-lighter {
+  @apply fill-icon-main-lighter;
+}
+
+.aq-icon--fill-inverse-default {
+  @apply fill-icon-inverse-default;
+}
+
+.aq-icon--fill-brand-lightest {
+  @apply fill-icon-brand-lightest;
+}
+
+.aq-icon--fill-brand-default {
+  @apply fill-icon-brand-default;
+}
+
+.aq-icon--fill-brand-darkest {
+  @apply fill-icon-brand-darkest;
+}
+
+.aq-icon--fill-critical-lightest {
+  @apply fill-icon-critical-lightest;
+}
+
+.aq-icon--fill-critical-default {
+  @apply fill-icon-critical-default;
+}
+
+.aq-icon--fill-critical-darkest {
+  @apply fill-icon-critical-darkest;
+}
+
+.aq-icon--fill-warning-lightest {
+  @apply fill-icon-warning-lightest;
+}
+
+.aq-icon--fill-warning-default {
+  @apply fill-icon-warning-default;
+}
+
+.aq-icon--fill-warning-darkest {
+  @apply fill-icon-warning-darkest;
+}
+
+.aq-icon--fill-positive-lightest {
+  @apply fill-icon-positive-lightest;
+}
+
+.aq-icon--fill-positive-default {
+  @apply fill-icon-positive-default;
+}
+
+.aq-icon--fill-positive-darkest {
+  @apply fill-icon-positive-darkest;
+}
