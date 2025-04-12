@@ -3,22 +3,58 @@ import { defineNuxtPlugin } from "#app";
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig();
 
-  const api = async (url, options = {}) => {
+  const globalHeaders = {
+    "App-Type": "0",
+    "Content-Type": "application/json",
+  };
+
+  const baseRequest = async (url, options = {}) => {
     try {
-      const response = await $fetch(url, {
+      return await $fetch(url, {
         baseURL: config.public.apiUrl,
-        withCredentials: true,
+        credentials: "include",
         headers: {
-          "App-Type": "0",
+          ...globalHeaders,
           ...options.headers,
         },
         ...options,
       });
-      return response;
     } catch (error) {
       handleApiError(error, nuxtApp);
       throw error;
     }
+  };
+
+  const api = {
+    request: {
+      get: (url, options = {}) =>
+        baseRequest(url, { ...options, method: "GET" }),
+      post: (url, body, options = {}) =>
+        baseRequest(url, { ...options, method: "POST", body }),
+      put: (url, body, options = {}) =>
+        baseRequest(url, { ...options, method: "PUT", body }),
+      patch: (url, body, options = {}) =>
+        baseRequest(url, { ...options, method: "PATCH", body }),
+      delete: (url, options = {}) =>
+        baseRequest(url, { ...options, method: "DELETE" }),
+      custom: (url, options = {}) => baseRequest(url, options),
+    },
+
+    setHeader(name, value) {
+      if (value === false) {
+        delete globalHeaders[name];
+      } else {
+        globalHeaders[name] = value;
+      }
+    },
+
+    setToken(token, type = "Bearer") {
+      if (token) {
+        this.setHeader("Authorization", `${type} ${token}`);
+      } else {
+        this.setHeader("Authorization", false);
+      }
+    },
   };
 
   const handleApiError = (error, nuxtApp) => {

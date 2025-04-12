@@ -258,12 +258,9 @@ useHead({
   title: "Onboarding",
 });
 
-import { AqField } from "@/components/aqfield";
-import { AqLabel } from "@/components/aqlabel";
-import { AqButton } from "@/components/aqbutton";
-import { AqIcon } from "@/components/aqicon";
-import { AqChoiceCard } from "@/components/aqchoicecard";
-import { showToast } from "@/components/aqtoast";
+definePageMeta({
+  requiresAuth: true,
+});
 
 const router = useRouter();
 const loading = ref(false);
@@ -274,10 +271,17 @@ const planWorkspace = ref(null);
 const disableStep1 = ref(true);
 const disableStep2 = ref(true);
 const workspaceLoaded = ref(null);
+const authStore = useAuthStore();
 
 const fixedEmails = ref(["", "", ""]);
 const emails = ref([]);
 const hasError = ref({});
+
+onBeforeMount(() => {
+  if (process.client && authStore.user?.metadata?.onboarded_at) {
+    navigateTo("/home");
+  }
+});
 
 const isValidEmail = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -347,7 +351,7 @@ const registerWorkspace = async () => {
       dataRegister.workspace_id = workspaceLoaded.value.id;
     }
 
-    const responseRegister = await $api.post(
+    const responseRegister = await $api.request.post(
       "/onboarding/create",
       dataRegister,
       { withCredentials: true }
@@ -378,7 +382,7 @@ const sendInvites = async () => {
   }
 
   try {
-    await $api.post("/onboarding/invite", {
+    await $api.request.post("/onboarding/invite", {
       emails: allEmails,
       uuid: workspaceLoaded.value?.uuid,
     });

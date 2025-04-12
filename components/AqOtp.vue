@@ -185,7 +185,7 @@ const emitOtp = async () => {
 
   if (otp.value.every((char) => char !== "")) {
     try {
-      await $api.post("/token/check", {
+      await $api.request.post("/token/check", {
         key: props.to,
         token: otpValue,
       });

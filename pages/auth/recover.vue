@@ -196,7 +196,7 @@ const confirmNewPassword = async () => {
     formStep3.value.email = formStep1.value.key;
     await formStep3.value.post("/recover/finish");
 
-    const response = await $api.post(
+    const response = await $api.request.post(
       "/auth/login",
       {
         email: formStep1.value.key,

@@ -172,13 +172,13 @@ const register = async () => {
 
 const finishRegister = async () => {
   try {
-    await $api.post("/register/finish", {
+    await $api.request.post("/register/finish", {
       email: formStep1.value.key,
       password: formStep1.value.password,
       token: token.value,
     });
 
-    const response = await $api.post(
+    const response = await $api.request.post(
       "/auth/login",
       {
         email: formStep1.value.key,
