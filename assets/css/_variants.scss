@@ -1,0 +1,221 @@
+@variants sm {
+  .hero-large {
+    @apply text-gigant font-extrabold leading-gigant;
+  }
+
+  .hero-medium {
+    @apply text-huger font-bold leading-huger;
+  }
+
+  .hero-small {
+    @apply text-xhuger font-bold leading-xhuger;
+  }
+
+  .display-large {
+    @apply text-larger font-semibold leading-larger;
+  }
+
+  .display-medium {
+    @apply text-xlarge font-semibold leading-xlarge;
+  }
+
+  .display-small {
+    @apply text-large font-semibold leading-large;
+  }
+
+  .title-semibold {
+    @apply text-medium font-semibold leading-medium;
+  }
+
+  .title-medium {
+    @apply text-medium font-medium leading-medium;
+  }
+
+  .subtitle-semibold {
+    @apply text-small font-semibold leading-small;
+  }
+
+  .subtitle-medium {
+    @apply text-small font-medium leading-small;
+  }
+
+  .body-semibold {
+    @apply text-xsmall font-semibold leading-xsmall;
+  }
+
+  .body-medium {
+    @apply text-xsmall font-medium leading-xsmall;
+  }
+
+  .body-regular {
+    @apply text-xsmall font-regular leading-xsmall;
+  }
+
+  .caption-semibold {
+    @apply text-smaller font-semibold leading-smaller;
+  }
+
+  .caption-medium {
+    @apply text-smaller font-medium leading-smaller;
+  }
+
+  .caption-regular {
+    @apply text-smaller font-regular leading-smaller;
+  }
+
+  .unicode-semibold {
+    @apply text-minimum font-semibold leading-minimum;
+  }
+
+  .unicode-regular {
+    @apply text-minimum font-regular leading-minimum;
+  }
+}
+
+@variants md {
+  .hero-large {
+    @apply text-gigant font-extrabold leading-gigant;
+  }
+
+  .hero-medium {
+    @apply text-huger font-bold leading-huger;
+  }
+
+  .hero-small {
+    @apply text-xhuger font-bold leading-xhuger;
+  }
+
+  .display-large {
+    @apply text-larger font-semibold leading-larger;
+  }
+
+  .display-medium {
+    @apply text-xlarge font-semibold leading-xlarge;
+  }
+
+  .display-small {
+    @apply text-large font-semibold leading-large;
+  }
+
+  .title-semibold {
+    @apply text-medium font-semibold leading-medium;
+  }
+
+  .title-medium {
+    @apply text-medium font-medium leading-medium;
+  }
+
+  .subtitle-semibold {
+    @apply text-small font-semibold leading-small;
+  }
+
+  .subtitle-medium {
+    @apply text-small font-medium leading-small;
+  }
+
+  .body-semibold {
+    @apply text-xsmall font-semibold leading-xsmall;
+  }
+
+  .body-medium {
+    @apply text-xsmall font-medium leading-xsmall;
+  }
+
+  .body-regular {
+    @apply text-xsmall font-regular leading-xsmall;
+  }
+
+  .caption-semibold {
+    @apply text-smaller font-semibold leading-smaller;
+  }
+
+  .caption-medium {
+    @apply text-smaller font-medium leading-smaller;
+  }
+
+  .caption-regular {
+    @apply text-smaller font-regular leading-smaller;
+  }
+
+  .unicode-semibold {
+    @apply text-minimum font-semibold leading-minimum;
+  }
+
+  .unicode-regular {
+    @apply text-minimum font-regular leading-minimum;
+  }
+}
+
+@variants lg {
+  .hero-large {
+    @apply text-gigant font-extrabold leading-gigant;
+  }
+
+  .hero-medium {
+    @apply text-huger font-bold leading-huger;
+  }
+
+  .hero-small {
+    @apply text-xhuger font-bold leading-xhuger;
+  }
+
+  .display-large {
+    @apply text-larger font-semibold leading-larger;
+  }
+
+  .display-medium {
+    @apply text-xlarge font-semibold leading-xlarge;
+  }
+
+  .display-small {
+    @apply text-large font-semibold leading-large;
+  }
+
+  .title-semibold {
+    @apply text-medium font-semibold leading-medium;
+  }
+
+  .title-medium {
+    @apply text-medium font-medium leading-medium;
+  }
+
+  .subtitle-semibold {
+    @apply text-small font-semibold leading-small;
+  }
+
+  .subtitle-medium {
+    @apply text-small font-medium leading-small;
+  }
+
+  .body-semibold {
+    @apply text-xsmall font-semibold leading-xsmall;
+  }
+
+  .body-medium {
+    @apply text-xsmall font-medium leading-xsmall;
+  }
+
+  .body-regular {
+    @apply text-xsmall font-regular leading-xsmall;
+  }
+
+  .caption-semibold {
+    @apply text-smaller font-semibold leading-smaller;
+  }
+
+  .caption-medium {
+    @apply text-smaller font-medium leading-smaller;
+  }
+
+  .caption-regular {
+    @apply text-smaller font-regular leading-smaller;
+  }
+
+  .unicode-semibold {
+    @apply text-minimum font-semibold leading-minimum;
+  }
+
+  .unicode-regular {
+    @apply text-minimum font-regular leading-minimum;
+  }
+}

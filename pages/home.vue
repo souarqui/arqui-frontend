@@ -7,8 +7,11 @@
 
 <script setup>
 import { useAuthStore } from "@/stores/auth";
-
 const authStore = useAuthStore();
+
+useHead({
+  title: "Home",
+});
 
 console.log("Usuário autenticado:", authStore.user);
 </script>

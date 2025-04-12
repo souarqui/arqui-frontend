@@ -131,6 +131,10 @@
 import { ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
 
+useHead({
+  title: "Recuperar sua senha",
+});
+
 const router = useRouter();
 const authStore = useAuthStore();
 const { $vform } = useNuxtApp();

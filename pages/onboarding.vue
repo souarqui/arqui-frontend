@@ -253,6 +253,11 @@
 
 <script setup>
 import { ref, computed, watch } from "vue";
+
+useHead({
+  title: "Onboarding",
+});
+
 import { AqField } from "@/components/aqfield";
 import { AqLabel } from "@/components/aqlabel";
 import { AqButton } from "@/components/aqbutton";

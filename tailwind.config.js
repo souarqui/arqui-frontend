@@ -247,6 +247,13 @@ export default {
         "bottom-medium": "0px 1px 1px 0 rgba(0, 0, 0, 0.15)",
         "bottom-huge": "0px 4px 10px 0 rgba(0, 0, 0, 0.30)",
       },
+      borderWidth: {
+        1: "1px",
+        2: "2px",
+        3: "3px",
+        4: "4px",
+        5: "5px",
+      },
     },
   },
   plugins: [],

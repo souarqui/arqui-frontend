@@ -113,6 +113,10 @@
 import { ref } from "vue";
 import { useAuthStore } from "~/stores/auth";
 
+useHead({
+  title: "Login",
+});
+
 const router = useRouter();
 const authStore = useAuthStore();
 const { $vform } = useNuxtApp();
