@@ -38,7 +38,6 @@
 
 <script setup>
 import { computed } from "vue";
-import { useRouter } from "vue-router";
 
 const props = defineProps({
   type: {
@@ -208,7 +207,7 @@ const handleClick = (event) => {
   if (!props.disabled && !props.loading) {
     if (isRouterLink.value) {
       event.preventDefault();
-      router.push(props.to);
+      navigateTo(props.to);
     } else {
       emit("click", event);
     }

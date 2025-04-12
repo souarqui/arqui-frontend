@@ -72,7 +72,6 @@
 
 <script setup>
 import { ref, computed, onMounted, nextTick } from "vue";
-import { useRouter } from "vue-router";
 import { useNuxtApp } from "#app";
 
 const { $axios } = useNuxtApp();
@@ -186,7 +185,7 @@ const emitOtp = async () => {
 
   if (otp.value.every((char) => char !== "")) {
     try {
-      await api.post("/token/check", {
+      await $api.post("/token/check", {
         key: props.to,
         token: otpValue,
       });
