@@ -74,7 +74,7 @@
 import { ref, computed, onMounted, nextTick } from "vue";
 import { useNuxtApp } from "#app";
 
-const { $axios } = useNuxtApp();
+const { $api } = useNuxtApp();
 
 const props = defineProps({
   modelValue: {
@@ -119,7 +119,7 @@ let backspaceCount = 0;
 
 const sendToken = async () => {
   try {
-    await $axios.post("/token/send", {
+    await $api.request.post("/token/send", {
       action: props.action,
       key: props.to,
       type: props.type,

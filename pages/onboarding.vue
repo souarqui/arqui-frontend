@@ -260,8 +260,10 @@ useHead({
 
 definePageMeta({
   requiresAuth: true,
+  layout: "blank",
 });
 
+const { $api } = useNuxtApp();
 const router = useRouter();
 const loading = ref(false);
 const step = ref(1);

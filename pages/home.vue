@@ -17,5 +17,6 @@ useHead({
 
 definePageMeta({
   requiresAuth: true,
+  layout: "default",
 });
 </script>

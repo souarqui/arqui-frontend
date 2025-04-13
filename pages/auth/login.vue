@@ -117,6 +117,10 @@ useHead({
   title: "Login",
 });
 
+definePageMeta({
+  layout: "blank",
+});
+
 const router = useRouter();
 const authStore = useAuthStore();
 const { $vform } = useNuxtApp();

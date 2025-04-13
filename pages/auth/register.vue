@@ -137,6 +137,11 @@ useHead({
   title: "Cadastrar",
 });
 
+definePageMeta({
+  layout: "blank",
+});
+
+const { $api } = useNuxtApp();
 const router = useRouter();
 const authStore = useAuthStore();
 const { $vform } = useNuxtApp();

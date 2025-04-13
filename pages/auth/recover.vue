@@ -135,6 +135,10 @@ useHead({
   title: "Recuperar sua senha",
 });
 
+definePageMeta({
+  layout: "blank",
+});
+
 const router = useRouter();
 const authStore = useAuthStore();
 const { $vform } = useNuxtApp();
