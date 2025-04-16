@@ -246,6 +246,7 @@ export default {
         "bottom-low": "1px 1px 8px 0 rgba(0, 0, 0, 0.08)",
         "bottom-medium": "0px 1px 1px 0 rgba(0, 0, 0, 0.15)",
         "bottom-huge": "0px 4px 10px 0 rgba(0, 0, 0, 0.30)",
+        medium: "0px 1px 8px 0px rgba(0, 0, 0, 0.15)",
       },
       borderWidth: {
         1: "1px",
@@ -253,6 +254,10 @@ export default {
         3: "3px",
         4: "4px",
         5: "5px",
+      },
+      gap: {
+        3: "0.75rem",
+        4.5: "1.125rem",
       },
     },
   },

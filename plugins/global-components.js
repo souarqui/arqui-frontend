@@ -1,12 +1,14 @@
-import AqDialog from "~/components/AqDialog.vue";
-import AqButton from "~/components/AqButton.vue";
-import AqChoiceCard from "~/components/AqChoiceCard.vue";
-import AqField from "~/components/AqField.vue";
-import AqIcon from "~/components/AqIcon.vue";
-import AqInput from "~/components/AqInput.vue";
-import AqLabel from "~/components/AqLabel.vue";
-import AqOtp from "~/components/AqOtp.vue";
-import AqToast from "~/components/AqToast.vue";
+import AqDialog from "~/components/core/AqDialog.vue";
+import AqButton from "~/components/core/AqButton.vue";
+import AqChoiceCard from "~/components/core/AqChoiceCard.vue";
+import AqField from "~/components/core/AqField.vue";
+import AqIcon from "~/components/core/AqIcon.vue";
+import AqInput from "~/components/core/AqInput.vue";
+import AqLabel from "~/components/core/AqLabel.vue";
+import AqOtp from "~/components/core/AqOtp.vue";
+import AqToast from "~/components/core/AqToast.vue";
+import LayoutSidebarApp from "~/components/layout/LayoutSidebarApp.vue";
+import LayoutTopBar from "~/components/layout/LayoutTopBar.vue";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("AqDialog", AqDialog);
@@ -18,4 +20,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("AqLabel", AqLabel);
   nuxtApp.vueApp.component("AqOtp", AqOtp);
   nuxtApp.vueApp.component("AqToast", AqToast);
+  nuxtApp.vueApp.component("LayoutSidebarApp", LayoutSidebarApp);
+  nuxtApp.vueApp.component("LayoutTopBar", LayoutTopBar);
 });

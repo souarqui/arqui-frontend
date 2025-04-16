@@ -18,8 +18,6 @@
       </p>
 
       <div class="space-y-3">
-        <AqIcon icon="teste" color="main-default" />
-
         <AqButton
           icon-left="social-google"
           @click="loginWithProvider('google')"
