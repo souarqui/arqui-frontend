@@ -6,7 +6,7 @@
       class="bg-surface-main-default rounded-2 p-6 shadow-bottom-medium w-[400px] max-lg:w-full max-lg:rounded-t-2"
     >
       <div class="flex justify-between items-center mb-6">
-        <h3 class="text-large font-semibold">Seus workspaces</h3>
+        <h3 class="title-semibold">Seus workspaces</h3>
         <button @click="$emit('close')">
           <AqIcon icon="close" size="large" color="main-default" />
         </button>
@@ -22,8 +22,8 @@
             AR
           </div>
           <div>
-            <p class="font-medium">Arqui</p>
-            <p class="text-smaller text-main-light">Workspace atual</p>
+            <p class="subtitle-semibold">Arqui</p>
+            <p class="caption-medium text-main-light">Workspace atual</p>
           </div>
         </div>
 
@@ -37,7 +37,7 @@
           >
             CR
           </div>
-          <p class="font-medium flex-1">Croqui</p>
+          <p class="subtitle-semibold flex-1">Croqui</p>
           <AqIcon icon="alt-arrow-right" size="small" color="main-default" />
         </button>
       </div>
