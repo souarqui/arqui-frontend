@@ -1,5 +1,5 @@
 <template>
-  <section class="main-layout px-10 h-screen w-screen overflow-hidden">
+  <section class="main-layout px-4 h-screen w-screen overflow-hidden">
     <div class="flex h-full w-full">
       <LayoutSidebarApp />
 
@@ -22,8 +22,6 @@ body {
 }
 
 .main-layout {
-  padding-left: 40px;
-  padding-right: 40px;
   box-sizing: border-box;
   margin: 0px !important;
 }

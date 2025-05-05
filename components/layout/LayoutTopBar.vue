@@ -1,7 +1,13 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import MobileTopBar from "./LayoutMobileTopBar.vue";
 
 const userMenuOpen = ref(false);
+const isMobile = ref(false);
+
+const checkScreenSize = () => {
+  isMobile.value = window.innerWidth < 1025;
+};
 
 const toggleUserMenu = () => {
   userMenuOpen.value = !userMenuOpen.value;
@@ -21,30 +27,34 @@ const handleClickOutside = (event) => {
 };
 
 onMounted(() => {
+  checkScreenSize();
+  window.addEventListener("resize", checkScreenSize);
   document.addEventListener("click", handleClickOutside);
 });
 
 onUnmounted(() => {
+  window.removeEventListener("resize", checkScreenSize);
   document.removeEventListener("click", handleClickOutside);
 });
 </script>
 
 <template>
-  <!-- Conteúdo principal -->
-  <div class="flex-1 bg-white rounded-xl shadow-md p-6 m-4">
-    <!-- Linha contendo título/subtítulo à esquerda e busca + botão à direita -->
+  <LayoutMobileTopBar v-if="isMobile" />
+
+  <div
+    class="flex-1 bg-white rounded-xl shadow-md px-8 py-6 m-4"
+    :class="{ 'mt-[82px]': isMobile }"
+  >
     <div class="flex items-start justify-between mb-8 flex-wrap gap-4">
-      <!-- Título e subtítulo -->
       <div class="flex-1 min-w-0">
         <h1 class="display-small text-default">Título</h1>
-        <p class="text-light body-medium">Subtítulo da página</p>
+        <p class="text-main-light body-medium">Subtítulo da página</p>
       </div>
 
-      <div class="cutout w-[286px] bg-surface-main-lightest">
+      <div class="cutout w-[286px] bg-surface-main-lightest hidden lg:block">
         <div
           class="icons items-center border-edge-main-default border-1 shadow-bottom-low"
         >
-          <!-- Ícones -->
           <div class="flex items-center gap-4.5">
             <a href="javascript:;">
               <AqIcon
@@ -87,14 +97,14 @@ onUnmounted(() => {
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3"
               >
                 <AqIcon icon="user-rounded" size="large" color="main-light" />
-                <span class="body-medium text-light">Meu perfil</span></a
+                <span class="body-medium text-main-light">Meu perfil</span></a
               >
               <a
                 href="#"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3"
               >
                 <AqIcon icon="settings" size="large" color="main-light" />
-                <span class="body-medium text-light"
+                <span class="body-medium text-main-light"
                   >Configurações e privacidade</span
                 ></a
               >
@@ -107,7 +117,9 @@ onUnmounted(() => {
                   size="large"
                   color="main-light"
                 />
-                <span class="body-medium text-light">Ajuda e suporte</span></a
+                <span class="body-medium text-main-light"
+                  >Ajuda e suporte</span
+                ></a
               >
               <a
                 href="#"
@@ -123,37 +135,18 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <!-- Barra de pesquisa e botão -->
-      <div class="flex-1 min-w-0 flex items-end gap-4 w-full sm:w-auto">
+      <div class="flex-1 min-w-0 flex items-end gap-4 w-full sm:w-auto ml-4">
         <div class="relative flex-1">
-          <div
-            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
-          <input
+          <AqField
             type="text"
-            placeholder="Buscar"
-            class="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            :placeholder="$t('search_field')"
+            icon-left="magnifer"
           />
         </div>
 
-        <button class="px-4 py-2 text-white rounded-md bg-buton" type="button">
-          Nova ação
-        </button>
+        <AqButton sub-variant="default" class="body-semibold"
+          >Nova Ação</AqButton
+        >
       </div>
     </div>
 

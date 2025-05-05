@@ -32,7 +32,7 @@
         <h3 class="title-semibold sm:display-small text-default">
           {{ title }}
         </h3>
-        <p v-if="subtitle" class="subtitle-medium text-light mt-2">
+        <p v-if="subtitle" class="subtitle-medium text-main-light mt-2">
           {{ subtitle }}
         </p>
         <p

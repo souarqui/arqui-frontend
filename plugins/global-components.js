@@ -7,6 +7,7 @@ import AqInput from "~/components/core/AqInput.vue";
 import AqLabel from "~/components/core/AqLabel.vue";
 import AqOtp from "~/components/core/AqOtp.vue";
 import AqToast from "~/components/core/AqToast.vue";
+import AqWorkspaceSelector from "~/components/core/AqWorkspaceSelector.vue";
 import LayoutSidebarApp from "~/components/layout/LayoutSidebarApp.vue";
 import LayoutTopBar from "~/components/layout/LayoutTopBar.vue";
 
@@ -20,6 +21,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("AqLabel", AqLabel);
   nuxtApp.vueApp.component("AqOtp", AqOtp);
   nuxtApp.vueApp.component("AqToast", AqToast);
+  nuxtApp.vueApp.component("AqWorkspaceSelector", AqWorkspaceSelector);
   nuxtApp.vueApp.component("LayoutSidebarApp", LayoutSidebarApp);
   nuxtApp.vueApp.component("LayoutTopBar", LayoutTopBar);
 });

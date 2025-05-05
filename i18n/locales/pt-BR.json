@@ -68,5 +68,6 @@
   "copied": "Copiado!",
   "can_invite_more_people": "O convite é opcional. Você poderá convidar mais pessoas após concluir esta etapa.",
   "can_invite_more_after": "Você poderá convidar mais pessoas depois de concluir essa etapa",
-  "invalid_email": "O e-mail está com formato inválido."
+  "invalid_email": "O e-mail está com formato inválido.",
+  "search_field": "Buscar..."
 }
