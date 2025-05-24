@@ -3,7 +3,6 @@ import { ref, onMounted, onUnmounted } from "vue";
 
 const isMinimized = ref(false);
 const isMobile = ref(false);
-const isMediumScreen = ref(false);
 const showWorkspaceSelector = ref(false);
 
 const toggleMinimize = () => {
@@ -12,12 +11,7 @@ const toggleMinimize = () => {
 
 const checkScreenSize = () => {
   const width = window.innerWidth;
-  isMobile.value = width < 1024;
-  isMediumScreen.value = width >= 1025 && width <= 1365;
-
-  if (isMediumScreen.value) {
-    isMinimized.value = true;
-  }
+  isMobile.value = width < 1366;
 };
 
 onMounted(() => {
@@ -35,22 +29,19 @@ onUnmounted(() => {
     v-show="!isMobile"
     :class="[
       'transition-all duration-300 ease-in-out h-person bg-white border-r border-gray-200 rounded-lg shadow-sm my-4 flex flex-col',
-      isMinimized || isMediumScreen ? 'w-18' : 'w-64',
+      isMinimized ? 'w-18' : 'w-64',
     ]"
   >
     <div class="flex-1 overflow-hidden">
       <div class="flex items-center p-4 mb-2">
         <div
           class="bg-surface-main-light w-10 h-10 rounded-full flex items-center justify-center caption-semibold text-default"
-          :class="{ 'mx-auto': isMinimized || isMediumScreen }"
+          :class="{ 'mx-auto': isMinimized }"
         >
           AR
         </div>
         <transition name="slide-fade">
-          <div
-            v-if="!isMinimized && !isMediumScreen"
-            class="flex items-center flex-1 min-w-0"
-          >
+          <div v-if="!isMinimized" class="flex items-center flex-1 min-w-0">
             <span class="ml-2 truncate subtitle-semibold text-default"
               >Arqui</span
             >
@@ -73,79 +64,70 @@ onUnmounted(() => {
         <a
           href="#"
           class="py-3 flex items-center subtitle-medium text-main-light hover:text-main-default"
-          :class="{ 'px-6': !isMinimized && !isMediumScreen }"
+          :class="{ 'px-6': !isMinimized }"
         >
           <AqIcon
             icon="ruler-cross-pen"
             size="large"
             color="main-light"
-            :class="{ 'mx-auto': isMinimized || isMediumScreen }"
+            :class="{ 'mx-auto': isMinimized }"
           />
           <transition name="slide-fade">
-            <span v-if="!isMinimized && !isMediumScreen" class="ml-3 truncate"
-              >Projetos</span
-            >
+            <span v-if="!isMinimized" class="ml-3 truncate">Projetos</span>
           </transition>
         </a>
 
         <a
           href="#"
           class="py-3 flex items-center subtitle-medium text-main-light hover:text-main-default"
-          :class="{ 'px-6': !isMinimized && !isMediumScreen }"
+          :class="{ 'px-6': !isMinimized }"
         >
           <AqIcon
             icon="share-circle"
             size="large"
             color="main-light"
-            :class="{ 'mx-auto': isMinimized || isMediumScreen }"
+            :class="{ 'mx-auto': isMinimized }"
           />
           <transition name="slide-fade">
-            <span v-if="!isMinimized && !isMediumScreen" class="ml-3 truncate"
-              >Equipe</span
-            >
+            <span v-if="!isMinimized" class="ml-3 truncate">Equipe</span>
           </transition>
         </a>
 
         <a
           href="#"
           class="py-3 flex items-center subtitle-medium text-main-light hover:text-main-default"
-          :class="{ 'px-6': !isMinimized && !isMediumScreen }"
+          :class="{ 'px-6': !isMinimized }"
         >
           <AqIcon
             icon="user-rounded"
             size="large"
             color="main-light"
-            :class="{ 'mx-auto': isMinimized || isMediumScreen }"
+            :class="{ 'mx-auto': isMinimized }"
           />
           <transition name="slide-fade">
-            <span v-if="!isMinimized && !isMediumScreen" class="ml-3 truncate"
-              >Clientes</span
-            >
+            <span v-if="!isMinimized" class="ml-3 truncate">Clientes</span>
           </transition>
         </a>
 
         <a
           href="#"
           class="py-3 flex items-center subtitle-medium text-main-light hover:text-main-default"
-          :class="{ 'px-6': !isMinimized && !isMediumScreen }"
+          :class="{ 'px-6': !isMinimized }"
         >
           <AqIcon
             icon="delivery"
             size="large"
             color="main-light"
-            :class="{ 'mx-auto': isMinimized || isMediumScreen }"
+            :class="{ 'mx-auto': isMinimized }"
           />
           <transition name="slide-fade">
-            <span v-if="!isMinimized && !isMediumScreen" class="ml-3 truncate"
-              >Fornecedores</span
-            >
+            <span v-if="!isMinimized" class="ml-3 truncate">Fornecedores</span>
           </transition>
         </a>
       </nav>
     </div>
 
     <div
-      v-if="!isMediumScreen"
       class="p-4 flex items-center subtitle-medium text-main-light hover:text-main-default cursor-pointer"
       @click="toggleMinimize"
     >
@@ -153,12 +135,10 @@ onUnmounted(() => {
         icon="sidebar"
         size="large"
         color="main-light"
-        :class="{ 'mx-auto': isMinimized || isMediumScreen }"
+        :class="{ 'mx-auto': isMinimized }"
       />
       <transition name="slide-fade">
-        <span v-if="!isMinimized && !isMediumScreen" class="ml-3"
-          >Minimizar</span
-        >
+        <span v-if="!isMinimized" class="ml-3">Minimizar</span>
       </transition>
     </div>
   </div>
