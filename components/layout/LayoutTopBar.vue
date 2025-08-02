@@ -150,11 +150,6 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <div class="bg-gray-50 p-6 rounded-md border border-gray-200 min-h-[200px]">
-      <p class="text-gray-600">
-        Área do conteúdo principal que se adapta ao espaço disponível.
-        <slot />
-      </p>
-    </div>
+    <slot />
   </div>
 </template>

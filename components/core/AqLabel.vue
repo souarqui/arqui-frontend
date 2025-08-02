@@ -17,7 +17,6 @@
       />
     </label>
 
-    <!-- Caption -->
     <p v-if="caption" class="caption-regular text-main-light mt-1">
       {{ caption }}
     </p>

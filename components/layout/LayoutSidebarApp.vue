@@ -93,8 +93,8 @@ onUnmounted(() => {
           </transition>
         </a>
 
-        <a
-          href="#"
+        <NuxtLink
+          to="/clientes"
           class="py-3 flex items-center subtitle-medium text-main-light hover:text-main-default"
           :class="{ 'px-6': !isMinimized }"
         >
@@ -107,10 +107,10 @@ onUnmounted(() => {
           <transition name="slide-fade">
             <span v-if="!isMinimized" class="ml-3 truncate">Clientes</span>
           </transition>
-        </a>
+        </NuxtLink>
 
-        <a
-          href="#"
+        <NuxtLink
+          to="/fornecedores"
           class="py-3 flex items-center subtitle-medium text-main-light hover:text-main-default"
           :class="{ 'px-6': !isMinimized }"
         >
@@ -123,7 +123,7 @@ onUnmounted(() => {
           <transition name="slide-fade">
             <span v-if="!isMinimized" class="ml-3 truncate">Fornecedores</span>
           </transition>
-        </a>
+        </NuxtLink>
       </nav>
     </div>
 

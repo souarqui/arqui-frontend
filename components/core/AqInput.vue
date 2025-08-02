@@ -16,7 +16,7 @@
 
     <input
       :type="inputType"
-      :value="value"
+      :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       @change="$emit('change', $event)"
       @keypress="$emit('keypress', $event)"
@@ -50,7 +50,7 @@
 import { ref, computed } from "vue";
 
 const props = defineProps({
-  value: {
+  modelValue: {
     type: String,
     default: "",
   },
@@ -58,38 +58,14 @@ const props = defineProps({
     type: String,
     default: "text",
   },
-  placeholder: {
-    type: String,
-    default: null,
-  },
-  iconLeft: {
-    type: String,
-    default: null,
-  },
-  currency: {
-    type: Boolean,
-    default: false,
-  },
-  caption: {
-    type: String,
-    default: null,
-  },
-  iconRight: {
-    type: String,
-    default: null,
-  },
-  maxlength: {
-    type: String,
-    default: null,
-  },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-  hasError: {
-    type: String,
-    default: "",
-  },
+  placeholder: String,
+  iconLeft: String,
+  currency: Boolean,
+  caption: String,
+  iconRight: String,
+  maxlength: String,
+  disabled: Boolean,
+  hasError: String,
 });
 
 const emit = defineEmits([
@@ -98,6 +74,8 @@ const emit = defineEmits([
   "keypress",
   "keyup",
   "keydown",
+  "focus",
+  "blur",
 ]);
 
 const inputType = ref(props.type);
